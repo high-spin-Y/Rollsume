@@ -1,4 +1,5 @@
 **Postdoctoral: X-ray Crystallography**
+*Albert Einstein College of Medicine, Bronx, NY*
 *June 2024 - February 2025*
 
 - Troubleshooted and expressed recombinant tryptophan dioxygenase (TDO) and indoleamine 2,3-dioxygenase (IDO) from E. coli

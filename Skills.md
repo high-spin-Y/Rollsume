@@ -1,33 +1,37 @@
 # Skills
 
 ## Technical Skills
-### Experimental
-- Organic synthesis
-- Inorganic synthesis
-- Polymer synthesis
-- Protein preparation and mutagenesis
-- Protein crystallography
 
-### Analytical
-- Spectroscopy: UV-Vis, Fluorescence, Raman, FTIR, IR-VASE, NMR, TCSPC, XPS, ICP, AAS
-- Microscopy: SEM, TEM, AFM
-- Chromatography and Mass Spectroscopy: HPLC, LC-MS, GC-MS
-- Kinetic studies: SPR
+### Experimental
+- **Protein Biochemistry**: Recombinant protein expression, purification, and mutagenesis
+- **X-ray Crystallography**: Protein crystallization, diffraction data collection (up to 1.88 Å resolution), structure solving and refinement
+- **Spectroscopy**: UV-Vis, Fluorescence, Raman, FTIR, IR-VASE, NMR, TCSPC, XPS, ICP, AAS
+- **Microscopy**: SEM, TEM, AFM
+- **Chromatography and Mass Spectroscopy**: HPLC, LC-MS, GC-MS
+- **Kinetic Studies**: Stopped-flow techniques, Surface Plasmon Resonance (SPR), enzyme kinetics
+- **Synthetic Chemistry**: Organic synthesis, inorganic synthesis, polymer synthesis
 
 ### Computational
-- Density Functional Theory (DFT)
-- Molecular Dynamics: LAMMPS, Monte Carlo simulations
-- Protein Structure Analysis: CCP4i2, AlphaFold3, Schrodinger Maestro
+- **Structural Biology**: Protein structure prediction and analysis (AlphaFold 3 local implementation), molecular docking, Schrodinger Maestro
+- **Crystallography Software**: CCP4i2, XDS, PHENIX
+- **Molecular Modeling**: Density Functional Theory (DFT), molecular dynamics (LAMMPS), Monte Carlo simulations
+- **Surface-Enhanced Spectroscopy Modeling**: Classical Correlation Model (CCM) for SEIRA, SERS, and SEF
 
-## Computer Science
-- Programming: Python, C, Fortran, Matlab, SQL
-- Web Development: Django
-- System Administration: Linux Shell, Vim
-- High-Performance Computing: HPC setup and maintenance
+### Data Analysis
+- **Programming**: Python (NumPy, Pandas, SciPy, BioPython), C, Fortran, Matlab, SQL
+- **Data Visualization**: Matplotlib, Seaborn, Plotly
+- **Automation**: Scripting for high-throughput data processing and analysis workflows
+
+## Computer Science & IT
+- **Web Development**: Django
+- **High-Performance Computing**: HPC setup, maintenance, and administration
+- **System Administration**: Linux Shell, Vim, Torque-Maui job queue structure
+- **Version Control**: Git, GitHub
 
 ## Soft Skills
-- Scientific writing and communication
-- Project management
-- Mentoring and teaching
-- Teamwork and collaboration
-- Multilinguistic (English, Mandarin, French, Japanese)
+- **Scientific Writing**: Publications in high-impact journals, technical reports, grants
+- **Scientific Communication**: Presentations at conferences, technical demonstrations to clients
+- **Project Management**: Leading research projects, managing laboratory operations
+- **Mentoring and Teaching**: Undergraduate research supervision, laboratory instruction
+- **Teamwork and Collaboration**: Cross-functional research teams, interdisciplinary projects
+- **Multilinguistic**: English, Mandarin, French, Japanese

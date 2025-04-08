@@ -1,4 +1,5 @@
 **Research Scientist: SPR development**
+*North Carolina State University, Raleigh, NC*
 *August 2018 - June 2023*
 
 - Developed molecular-unique absorption/scattering model of SEIRA, SERS, and SEF spectroscopies based on classical electromagnetism; simulated enhancement factor within 8.8% error compared to experimental

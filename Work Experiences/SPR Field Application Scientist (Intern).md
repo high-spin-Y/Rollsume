@@ -1,4 +1,5 @@
 **SPR Field Application Scientist (Intern)**
+*Nicoya LIfesciences, Woburn, MA*
 *May 2022 - August 2022*
 
 - Tested customer samples including proteins, oligonucleotides, antigen-antibody binding kinetics with SPR technique

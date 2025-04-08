@@ -30,3 +30,4 @@
 - Project management
 - Mentoring and teaching
 - Teamwork and collaboration
+- Multilinguistic (English, Mandarin, French, Japanese)

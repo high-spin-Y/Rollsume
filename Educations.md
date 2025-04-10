@@ -14,5 +14,5 @@ Honors/Awards - Presentation of Poster Competition Awards (2022, NC-ACS Annual M
 **Zhejiang University**, Hangzhou, China
 B.S. in Chemistry
 August 2013 - June 2017
-GPA - 3.84
+GPA - 3.88
 Honors/Awards - Graduate Student Awards and Recognitions, Foundations in Teaching Training Program (2019)/ Scholarship for Outstanding Merits (2015 & 2016)

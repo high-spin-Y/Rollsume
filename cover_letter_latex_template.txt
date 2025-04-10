@@ -1,0 +1,45 @@
+\documentclass[11pt,a4paper]{letter}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\signature{Yuan Gao}
+
+
+\begin{document}
+
+\begin{letter}{Scientist/Senior Scientist\\
+Vivtex\\
+Boston, MA}
+
+\opening{Dear Hiring Manager,}
+
+I am writing to express my strong interest in the Scientist position at Vivtex. With over seven years of experience in analytical chemistry, biomolecular characterization, and computational modeling, I believe my background aligns perfectly with your needs for advancing Vivtex's revolutionary GI-ORIS™ technology.
+My recent postdoctoral work at Albert Einstein College of Medicine focused on protein-metabolite binding studies and enzyme kinetics characterization. I successfully conducted high-resolution protein crystallography (achieving 1.88 Å resolution) and implemented cutting-edge computational approaches for binding predictions. This experience has given me valuable expertise in:
+
+Designing and executing complex screening experiments with biomolecules
+Developing and optimizing analytical methods for protein-small molecule interactions
+Integrating computational predictions with experimental data for enhanced insights
+Utilizing spectroscopic techniques for real-time kinetics measurements
+
+As a Field Application Scientist intern at Nicoya Lifesciences, I analyzed approximately 60 customer samples using Surface Plasmon Resonance (SPR) to characterize protein-protein interactions and biomolecular binding kinetics. I developed automated data analysis workflows that extracted and processed data from JSON files, significantly enhancing the efficiency of data processing for the Alto platform. This experience demonstrates my ability to work in a fast-paced environment while delivering timely results to both internal teams and external clients.
+My doctoral research at North Carolina State University involved developing novel theoretical models for spectroscopic analysis that achieved remarkable accuracy (within 8.8\% of experimental results). This work required strong analytical chemistry skills and the ability to independently design experiments, troubleshoot complex systems, and develop computational workflows—skills that would transfer directly to the high-throughput screening environment at Vivtex.
+Additionally, my experience mentoring undergraduate students as a Teaching Assistant and Lab Instructor has honed my leadership and communication skills. I've guided student research projects in areas including proteomics and enzyme kinetics, demonstrating my ability to effectively lead research teams.
+I am particularly excited about Vivtex's mission to transform oral drug delivery through innovative technology and the opportunity to collaborate within an interdisciplinary team on challenges with real-world impact. The company's connection to Professor Robert Langer's pioneering work at MIT and your collaborations with global pharmaceutical companies represent exactly the kind of innovative environment where I can make significant contributions.
+I would welcome the opportunity to discuss how my experience and skills could benefit Vivtex's R&D programs. Thank you for considering my application.
+Sincerely,
+Yuan Gao, PhD
+
+
+
+\closing{Sincerely,}
+
+\end{letter}
+
+\end{document}

@@ -1,194 +1,335 @@
-\documentclass[letterpaper,11pt]{article}
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{engord}
+\usepackage{multicol}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\usepackage{xcolor}
+\usepackage[margin=0.5in,bottom=0.5in,top=0.4in]{geometry}
+\usepackage{pdfrender}
 \usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{textcomp}
+\input{glyphtounicode}
+\pdfgentounicode=1
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
-\urlstyle{same}
-
-\raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
+\pagenumbering{arabic}
+\setlength{\footskip} {1em}
+\fancypagestyle{plain} {%
+    \fancyhf{}%
+    \fancyfoot[C]{}%
+    \renewcommand{\headrulewidth} {0pt}%
+    \renewcommand{\footrulewidth} {0pt}%
 }
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#3} & #2 \\
-      \textit{\small#1} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+\fancypagestyle{fancy} {%
+    \fancyhf{}%
+    \fancyfoot[C]{--~\thepage~--}%
+    \renewcommand{\headrulewidth} {0pt}%
+    \renewcommand{\footrulewidth} {0pt}%
 }
+\pagestyle{plain}
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
-
-\renewcommand{\labelitemii}{$\circ$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\titleformat{\section} {\fontsize{12pt}{12pt}\selectfont}{}{0pt}{}[\vspace{0pt}\titlerule]
+\titlespacing*{\section} {0pt}{8pt}{4pt}
 
 \newcommand{\jobexp}[5]{
-  \resumeSubheading
-    {#1}{#2}{#3}{#4}
-    \resumeItemListStart
-        #5
-    \resumeItemListEnd
+\textbf{#4}, \href{#5} {#1} -- {#2} \hfill {#3}
+\vspace{-2pt}
 }
 
-\newenvironment{projdetails}{
-  \begin{itemize}[leftmargin=*]
-}{
-  \end{itemize}
+\newcommand{\techexp}[5]{
+\textbf{#4}, {#2} \hfill {#3}\par
 }
 
-\newenvironment{pubdetails}{
-  \begin{itemize}[leftmargin=*]
-}{
-  \end{itemize}
+\newcommand{\skill}[1]{%
+\ {\small(#1)}}
+
+\newcommand{\project}[3]{
+\textbf{#1} \hfill {#3}
+\vspace{-2pt}
 }
 
-%-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hhref}[2]{%
+\href{#1} {\color{darkgray}\small(#2 {\footnotesize\faExternalLink})}%
+}
 
+\newcommand{\ghhref}[1]{%
+\hhref{#1} {GitHub}%
+}
 
-\begin{document}
+\newcommand{\labelproj} {$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{projdetails} {%
+\begin{list} {}{
+    \renewcommand{\makelabel} {\labelproj}%
+    % labelwidth + labelsep = itemindent + leftmargin
+    \setlength{\leftmargin} {9pt}%
+    \setlength{\labelwidth} {3.84pt}%
+    \setlength{\labelsep} {3.0pt}%
+    \setlength{\itemindent} {-1.4pt}%
+    \setlength{\topsep} {3pt}%
+    \setlength{\listparindent} {0.0pt}%
+    \setlength{\itemsep} {0pt}%
+    \setlength{\parsep} {1pt}%
+}%
+} {%
+\end{list}
+}
 
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Large Yuan Gao} & Email : \href{mailto:youko271828@gmail.com}{youko271828@gmail.com}\\
-  \href{https://www.linkedin.com/in/yuan-gao-309b36235/}{LinkedIn} & Mobile : +1-919-527-9638 \\
-\end{tabular*}
+\newcommand{\labelpub} {$\vcenter{\hbox{\small--}}$}
+\newenvironment{pubdetails} {%
+\begin{list} {}{\footnotesize
+    \renewcommand{\makelabel} {\labelpub}%
+    % labelwidth + labelsep = itemindent + leftmargin
+    \setlength{\leftmargin} {9pt}%
+    \setlength{\labelwidth} {3.84pt}%
+    \setlength{\labelsep} {3.0pt}%
+    \setlength{\itemindent} {-1.4pt}%
+    \setlength{\topsep} {3pt}%
+    \setlength{\listparindent} {0.0pt}%
+    \setlength{\itemsep} {0pt}%
+    \setlength{\parsep} {1pt}%
+}%
+} {%
+\end{list}
+}
 
-%-----------PROFESSIONAL SUMMARY-----------------
-\section{Professional Summary}
-Experienced scientist with over 7 years of hands-on expertise in Surface Plasmon Resonance (SPR) techniques, protein-protein interaction analysis, and advanced analytical methods. Specialized in biomolecular characterization using SPR, spectroscopy, and computational modeling. Demonstrated success in implementing innovative analytical approaches and automated data processing workflows for protein characterization, with published research in high-impact journals.
+\newcommand{\subpublication}[1]{
+\vspace{-0.2pt}
+\quad {\color{darkgray} \small \texttt{#1}}
+\vspace{1pt}
+}
 
-%-----------EDUCATION-----------------
-\section{Education}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {North Carolina State University}{Raleigh, NC}
-    {Ph.D. in Chemistry}{Aug. 2018 -- June 2023}
-  \resumeSubheading
-    {Zhejiang University}{Hangzhou, China}
-    {B.S. in Chemistry}{Aug. 2013 -- June 2017}
-\resumeSubHeadingListEnd
+\def\sCHEM{
+\textbf{Analytical Techniques:} Surface Plasmon Resonance (SPR), UV-Vis, Fluorescence, SEM, TEM, AFM, XRD, XPS, FTIR, IR-VASE, ICP, AAS, NMR, Raman, HPLC, LC–MS, GC–MS \\
+\textbf{Biochemical Methods:} Protein expression and purification, protein crystallography, enzyme kinetics, stopped-flow techniques, biomolecular binding assays \\
+\textbf{Computational:} DFT, LAMMPS, Monte Carlo simulations, CCP4i2, AlphaFold3, molecular docking \\
+\textbf{Computer Science:} Linux Shell, Vim, HPC setup and maintenance, Python, C, Fortran, Matlab, SQL, Django
+\par
+}
 
-%-----------TECHNICAL SKILLS-----------------
-\section{Technical Skills}
-\resumeSubHeadingListStart
-  \resumeSubItem{Analytical}{UV-Vis, Fluorescence, SEM, TEM, AFM, XRD, XPS, FTIR, IR-VASE, ICP, AAS, NMR, Raman, SPR, HPLC, LC–MS, and GC–MS}
-  \resumeSubItem{Experimental}{Organic and inorganic synthesis, polymer synthesis, protein preparation and mutagenesis, protein crystallography}
-  \resumeSubItem{Computational}{DFT, LAMMPS, Monte Carlo simulations, CCP4i2, AlphaFold3}
-  \resumeSubItem{Computer science}{Linux Shell, Vim, HPC setup and maintenance, Python, C, Fortran, Matlab, SQL, Django}
-\resumeSubHeadingListEnd
+\def\edChemPhD{%
+\textbf{North Carolina State University}, Raleigh, NC --
+    {Ph.D. in Chemistry} \hfill \emph{Aug. 2018 -- June 2023} \\
+Dissertation: A Classical Correlation Model of Resonance Raman Scattering and Surface Enhanced Infrared Absorption Spectroscopies \\
+GPA: 4.00 | Honors: Presentation of Poster Competition Awards (2022, NC-ACS Annual Meeting), Miles F. Anderson Award for Excellence in Teaching (2022)
 
-%-----------EXPERIENCE-----------------
-\section{Professional Experience}
-\resumeSubHeadingListStart
+}
 
-\jobexp{Albert Einstein College of Medicine}{Bronx, NY}{Postdoctoral: X-ray Crystallography}{June 2024 -- Feb. 2025}
-{
+\def\edChemBS{%
+\textbf{Zhejiang University}, Hangzhou, China --
+    {B.S. in Chemistry} \hfill \emph{Aug. 2013 -- June 2017} \\
+GPA: 3.88 | Honors: Graduate Student Awards and Recognitions, Scholarship for Outstanding Merits (2015 \& 2016)
+
+}
+
+\def\ePDXtal{%
+\jobexp{Albert Einstein College of Medicine}{NY}{June 2024 -- Feb. 2025}
+{Postdoctoral: X-ray Crystallography}{}
 \begin{projdetails}
-    \item Troubleshooted and expressed recombinant tryptophan dioxygenase (TDO) and indoleamine 2,3-dioxygenase (IDO) from E. coli. 
-    \item Screened and generated TDO \& IDO crystals with 8 metabolites under anaerobic conditions.
-    \item Conducted X-ray crystallography measurements for metabolites binded TDO/IDO crystals. Analyzed X-ray diffraction data with CCP4i2. 
+    \item Successfully expressed and purified recombinant tryptophan dioxygenase (TDO) and indoleamine 2,3-dioxygenase (IDO) from E. coli expression systems.
+    \item Achieved high-resolution protein crystal structures (1.88 Å for TDO and 2.45 Å for IDO) through systematic optimization of crystallization conditions.
+    \item Conducted protein-metabolite binding studies with 8 different metabolites under anaerobic conditions, establishing a structural database to map binding interactions.
     \item Applied UV-Vis spectroscopy and stopped-flow techniques to study TDO/IDO enzyme kinetics.
-    \item Implemented AlphaFold3 and Schrodinger Maestro for TDO/IDO metabolites binding studies within a week.
+    \item Implemented AlphaFold3 and Schrodinger Maestro for TDO/IDO metabolites binding studies within one week of project initiation.
+    \item Utilized synchrotron facilities at Brookhaven NSLS2 and SLAC-SSRL beamlines for high-quality X-ray diffraction data collection.
 \end{projdetails}
 }
 
-\jobexp{Nicoya Lifesciences}{Woburn, MA}{SPR Field Application Scientist (Intern)}{May 2022 -- Aug. 2022}
-{
+\def\ePDMatS{%
+\jobexp{North Carolina State University}{NC}{July 2023 -- May 2024}
+{Postdoctoral: Polymer Engineering}{}
 \begin{projdetails}
-    \item Tested customer samples including proteins, oligonucleotides, antigen-antibody binding kinetics with SPR technique.
-    \item Built the chemical inventory, managed lab orders, served as the safety officer for the Boston Lab.
-    \item Provided technical support and demonstration for customers in universities and client companies.
-    \item Generated test reports on customer samples and demo experiments for the quality department.
-    \item Joined in publication reviews for sales marketing.
-    \item Demonstrated Python based automated data analysis to colleagues. 
-    \item Presented in routine client meetings and internal meetings to drive project deliverables and timelines.
+    \item Collaborated with Eastman Inc. to develop modified copolyesters with enhanced anti-abrasion properties, achieving an 80\% decrease in volume removal compared to commercial copolyesters.
+    \item Implemented LAMMPS molecular dynamics to simulate nanoindentation processes and predict polymer mechanical properties.
+    \item Enhanced spectroscopic understanding using DFT computation and IR-ATR measurements to identify specific IR peak assignments in polymer spectra.
+    \item Innovated cost-effective alternatives to nanoindentation by adapting Martindale abrasion testing for polymer evaluation.
 \end{projdetails}
 }
 
-\jobexp{North Carolina State University}{Raleigh, NC}{Research Scientist: SPR development}{Aug. 2018 -- June 2023}
-{
+\def\eInternSPR{%
+\jobexp{Nicoya Lifesciences}{MA}{May 2022 -- Aug. 2022}
+{SPR Field Application Scientist (Intern)}{}
 \begin{projdetails}
-    \item Developed molecular-unique absorption/scattering model of SEIRA, SERS, and SEF spectroscopies based on classical electromagnetism. Simulated enhancement factor within 8.8\% error compared to experimental. 
-    \item Designed experiments for laser excited molecular Raman/IR signal enhancement by SPR/LSPR of noble metal and CdO semiconductor with polymer coating.
-    \item Applied IR-VASE to characterize SPR of the CdO semiconductor. 
-    \item Built HPC environments for the group, provided Python and Bash scripts for automatic file formatting and job submission.
+    \item Conducted comprehensive biomolecular binding analyses using Open-SPR and Alto platforms, successfully characterizing protein-protein interactions, antigen-antibody binding, and oligo-oligo interactions for approximately 60 customer samples.
+    \item Overcame technical challenges in oligonucleotide DNA interaction studies by developing specialized surface immobilization approaches distinct from standard protein protocols.
+    \item Improved data processing efficiency by developing Python-based automated analysis tools that directly extracted and processed data from JSON files.
+    \item Generated comprehensive analytical reports for both customer samples and demonstration experiments to support quality assurance and product validation.
+    \item Delivered technical demonstrations of SPR technology at academic institutions and provided specialized technical support to clients from universities and biotechnology companies.
 \end{projdetails}
 }
 
-\jobexp{North Carolina State University}{Raleigh, NC}{Postdoctoral: Polymer Engineering}{July 2023 -- May 2024}
-{
+\def\ePhDSPR{%
+\jobexp{North Carolina State University}{NC}{Aug. 2018 -- June 2023}
+{Research Scientist: SPR Development}{}
 \begin{projdetails}
-    \item Designed and modified polyesters and organic frameworks for Eastman Inc, increased anti-abrasion property by 66\%. 
-    \item Implemented LAMMPS molecular dynamics on polymer mechanical properties simulations. 
-    \item Demonstrated solvent interactions with polyester by DFT computation and IR-ATR measurements. 
+    \item Pioneered a groundbreaking Classical Correlation Model (CCM) for surface-enhanced spectroscopies (SEIRA, SERS, SEF) that uniquely integrates molecular information with Maxwell equations.
+    \item Developed a force-based theoretical approach matching quantum mechanical calculations for resonance Raman spectroscopy, providing new insights into molecular-plasmon interactions.
+    \item Achieved remarkable accuracy with simulations matching experimental enhancement factors to within 8.8\% error, as validated in Journal of Physical Chemistry A publications.
+    \item Designed and executed comprehensive experiments for molecular spectroscopy enhancement, including laser-excited Raman/IR signal enhancement.
+    \item Independently developed computational infrastructure by building HPC environments and creating Python/Bash automation scripts for efficient data analysis.
 \end{projdetails}
 }
 
-\jobexp{North Carolina State University}{Raleigh, NC}{Teaching Assistant and Lab Instructor: Advanced Measurements}{Aug. 2018 -- May 2023}
-{
-\begin{projdetails}
-    \item Mentored undergraduate students with physics and chemistry concepts including inorganic chemistry, group theory, electromagnetism, as well as laboratory techniques and scientific writing.
-    \item Designed and guided student research projects associated with advanced instrumental measurements, in the areas of water and exhaust analysis, proteomics, enzyme kinetics, surface enhanced spectroscopies.
-\end{projdetails}
-}
-
-\jobexp{}{}{Guest Editor, Independent Reviewer}{Sept. 2021 -- Present}
-{
+\def\eGER{%
+\jobexp{Chemical Society} {Earth}{Sept. 2021 -- Present}
+{Guest Editor, independent reviewer} {}
 \begin{projdetails}
     \item Served as the guest editor for special issue Surface-Enhanced Spectroscopy: Methods and Applications of Journal of Visualized Experiments (JoVE). 
     \item Served as scientific journal reviewer for Nature Communications, Journal of Applied Physics, and Small. Reviewed research articles in the background of surface enhanced spectroscopies, solid-state physics, semiconductor, and optics.
 \end{projdetails}
 }
 
-\resumeSubHeadingListEnd
+\def\eTA{%
+\jobexp{North Carolina State University} {NC}{Aug. 2018 -- May 2023}
+{Teaching Assistant and Lab Instructor: Advanced Measurements} {}
+\begin{projdetails}
+    \item Mentored undergraduate students with physics and chemistry concepts including inorganic chemistry, group theory, electromagnetism, as well as laboratory techniques and scientific writing.
+    \item Designed and guided student research projects associated with advanced instrumental measurements, in the areas of water and exhaust analysis, proteomics, enzyme kinetics, surface enhanced spectroscopies.
+\end{projdetails}
+}
 
-%-----------PUBLICATIONS-----------------
+\def\eBS{%
+\jobexp{Zhejiang University}{China}{Aug. 2016 -- July 2018}
+{Research Scientist: Computational Organometallics}{}
+\begin{projdetails}
+    \item Led DFT computational investigations into nickel-catalyzed reactions, revealing critical mechanistic insights that explained experimental observations of regioselectivity.
+    \item Developed custom automation scripts in Linux shell, AWK, and Python to streamline transition state discovery, significantly accelerating computational workflow.
+    \item Built and configured a high-performance computing (HPC) cluster for the research group in only two weeks, including hardware integration and implementation of job queue structures.
+\end{projdetails}
+}
+
+\def\eVS{%
+\jobexp{North Carolina State University} {NC}{July 2015 -- Sept. 2015}
+{Visiting Scholar: Organic Total Synthesis} {}
+\begin{projdetails}
+    \item Achieved total synthesis for 2,3,12,13-tetrabromo-5-methoxy-8,8,18,18-tetramethylbacteriochlorin in 3 weeks.
+    \item Characterized synthesized porphyrin based auxochromes with MALDI and manual shimming NMR. 
+    \end{projdetails}
+}
+\def\eThreemm{
+    \vspace{3mm}
+}
+\def\eAndroid{%
+\jobexp{IVI lab research program} {NJ}{2024 -- Present}
+{Android App Development} {}
+\begin{projdetails}
+    \item Developed a game bundle application that delivers high-quality AI-generated games to mobile app users within two weeks.
+    \item Regularly integrated the application with the game generation platform, encouraging users to generate their own games.
+    \item Implemented gameplay and offline score history systems in the Android application, with further enhancements planned for the future.
+\end{projdetails}
+}
+
+\def\eMLE{%
+\jobexp{IVI lab research program} {NJ}{2019 -- Present}
+{Machine Learning} {}
+\begin{projdetails}
+    \item Designed and implemented a sophisticated 3-component framework for configuration prediction, blending trajectory simulation, transformer-based prediction, and a custom regulated auto-encoder network.
+    \item Enhanced the public steering library 'steersuite' to enable more complex configurations and generate enriched binary environments and trajectories post-simulation.
+    \item Engineered a specialized DNN utilizing Keras, capable of processing multiple trajectory segments, significantly enhancing active learning.
+    \item Developed a comprehensive Ruby on Rails application orchestrating three components as micro-services, ensuring operation across both local and clustered environments.
+    \item Devised and implemented a strategic 4-stage plan for introducing innovative methods for predicting human trajectories, now a cornerstone project within the research group.
+    \item Revamped a student-initiated machine learning project, significantly improving its accuracy from 60\% to 95\%.
+    \item Developed a novel method for optimal result measurement, leading to shared first authorship in a notable conference paper.
+    \item Completed the project under a tight 10-day deadline by reducing hyper-parameter tuning time and executing parallel instances, significantly enhancing computational efficiency.
+\end{projdetails}
+}
+
+\def\eHopRL{%
+\jobexp{IVI lab research program} {NJ}{2019 -- 2020}
+{AI/Reinforcement Learning} {}
+\begin{projdetails}
+    \item Led the innovative design and development of a state-of-the-art pedestrian steering algorithm in Unity, enhancing simulation accuracy in complex, multi-agent environments with a focus on efficient obstacle avoidance.
+\end{projdetails}
+}
+
+
+%> basic: Mousica Foundation|Founder, Electrical Prototyping Engineer
+%> addr: 16192 Costal Highway|Lewes|DE|Delaware\r|19958|Lewes, DE
+%> begin: 20230901
+%> end: 20241231
+
+\def\sectionQualifications{%
+\section{Qualifications}
+\textbf{Professional Engineer:}
+\href{https://account.ncees.org/rn/2365029-1607074-f74286f} {Passed} the \textit{FE Electric and Computer} exam; EIT is being processed by the NJ board
+}
+
+\def\sectionPublications{%
 \section{Publications}
 \begin{pubdetails}
 \item Geeraerts Z., Ishigami I., \underline{Gao Y.}, Yeh S. –R.* Heme-based dioxygenases: Structure, function and dynamics.  \textit{J. Inorg. Biochem.}, \textbf{2024}, \textit{261}, 112707. 
 \item \underline{Gao Y.*}, Aspnes D. E., and Franzen S. Classical Model of Surface Enhanced Infrared Absorption (SEIRA) Spectroscopy. \textit{J. Phys. Chem. A},  \textbf{2022}, \textit{126}, 341.
 \item \underline{Gao Y.}, Aspnes D. E., and Franzen S.* Classical Correlation Model of Resonance Raman Spectroscopy. \textit{J. Phys. Chem. A},  \textbf{2020}, \textit{124}, 9177.
-\item \underline{Gao Y.}, Houk K. N., Ho C. –Y.* and Hong X.* The Mechanism and Regioselectivities of (NHC) Nickel (ii) Hydride-Catalyzed Cycloisomerization of Dienes: A Computational Study. \textit{Org. Biomol. Chem.},  \textbf{2017}, \textit{15}, 7131.
+\item \underline{Gao Y.}, Houk K. N., Ho C. –Y.* and Hong X.* The Mechanism and Regioselectivities of (NHC) Nickel (ii) Hydride-Catalyzed Cycloisomerization of Dienes: A Computational Study. \textit{Org. Biomol. Chem.},  \textbf{2017}, \textit{15}, 7131. 
 \item \underline{Gao Y.}, Ji C. –L., Hong X.* Ni-mediated C–N activation of Amides and Derived Catalytic Transformations. \textit{Sci. China: Chem.},  \textbf{2017}, \textit{60}, 1413. 
-\item Zhang S. –Q., Taylor B. C. H., Ji C. –L., \underline{Gao Y.}, Harris M. R., Hanna L. E., Jarvo E. R.*, Houk K. N.* and Hong X.* Mechanism and Origins of Ligand-Controlled Stereoselectivity of Ni-Catalyzed Suzuki–Miyaura Coupling with Benzylic Esters: A Computational Study. \textit{J. Am. Chem. Soc.},  \textbf{2017}, \textit{139}, 12994.
-\end{pubdetails}
+\item Zhang S. –Q., Taylor B. C. H., Ji C. –L., \underline{Gao Y.}, Harris M. R., Hanna L. E., Jarvo E. R.*, Houk K. N.* and Hong X.*Mechanism and Origins of Ligand-Controlled Stereoselectivity of Ni-Catalyzed Suzuki–Miyaura Coupling with Benzylic Esters: A Computational Study. \textit{J. Am. Chem. Soc.},  \textbf{2017}, \textit{139}, 12994.
+ 
 
-\end{document}
+
+
+%\item J. Balking, TJ. Chang, PJ. Jackson, G. Tziantzioulis, A. Li, F. Gao, A. Lavrov, G. Chirkov, \underline{J. Tu} and D. Wentzlaff,  ``OpenPiton at 5: A Nexus for Open and Agile Hardware Design,'' in IEEE Micro, vol. 40, no. 4, pp. 22-31, 1 July-Aug. 2020, doi: 10.1109/MM.2020.2997706. \\
+%    \subpublication{Assisted in maintaining the Git repository and keeping track of upstream changes.}
+\end{pubdetails}
+}
+
+\def\sectionTeaching{%
+\section{Teaching Experience}
+\techexp{Intel REU} {Research Experience for Undergrads (REU)}{2022}
+{Student Mentor} {Prof. David Wentzlaff}
+\techexp{ECE203} {Electronic Circuit Design Analysis and Implementation}{2022}
+{Teaching Assistant} {Dr. Hossein Valavi}
+\techexp{ELE115} {Introduction to Computing: Programming Autonomous Vehicles}{2020}
+{Head Teaching Assistant} {Prof. David Wentzlaff}
+}
+
+% \def\sectionMisc{%
+% \section{Awards and Honors}
+% \textbf{Full Scholarship}, Princeton University, \hfill{} \emph{2018-2019}\\
+% \textbf{Meritorious Winner}, The Mathematical Contest in Modeling \hfill{} \emph{2017}\\
+% \textbf{Alumni Scholarship}, Tsinghua University \hfill{} \emph{2015-2017}\\
+% \textbf{Scholarship for Outstanding Technology Creativeness}, Tsinghua University \hfill{} \emph{2015-2016}
+% \section{Hobbies and Interests}
+% Open-Source Developer, Maker, DIYer, Fan Art Creator, Stable Diffusion Artist, Graphic/Game Designer, Violist/Cellist. \hfill $\square$
+% }
+
+\def\sectionSummarySC{%
+\vspace{2.5mm}
+Scientist and scientific journal reviewer with experience in physical chemistry, inorganic chemistry, organic chemistry, polymer science, material science, catalysis, computational chemistry, biochemistry. Research focused on finding connection and philosophic description of all chemical fields, to support the sustainability of the society. 
+\par}
+
+\def\sectionSummarySPR{%
+\vspace{2.5mm}
+Biochemist with specialized expertise in surface plasmon resonance (SPR) and biophysical characterization techniques, offering seven years of experience in theoretical modeling, biomolecular binding assays, and analytical method development. Demonstrated success in applying advanced spectroscopy, crystallography, and computational approaches to solve complex molecular interaction challenges. Skilled in developing and optimizing analytical protocols for diverse biological systems, with a strong publication record and experience in interdisciplinary research environments.
+\par}
+
+\makeatletter
+\def\@maketitle{%
+\begin{center}
+    {\Large {Yuan Gao} }\\\smallskip
+    {\href{mailto:youko271828@gmail.com} {youko271828@gmail.com}}\ |\ %\smallskip
+    {\href{https://scholar.google.com/citations?user=Hm5gw-EAAAAJ} {scholar.google/YuanGao}}
+\end{center}
+\vspace{-1.5em}}
+\makeatother
+
+%>>>>>
+%> name: Jinzheng Tu|Jinzheng\tTu|Tu\tJinzheng|Jinzheng\t\tTu|Tu\t\tJinzheng|b1\tTu|b1\tb1\tb1
+%> addr: 266 Waverly St, Apt 529|266 Waverly St\tApt 529|Framingham|MA\t|Massachusetts\t|Mass\r|01702
+%> contact: Mobile|United States|+1|6092718068|b1f6c1c4@gmail.com
+%> website: https://github.com/b1f6c1c4/|https://www.linkedin.com/in/b1f6c1c4/
+%> misc: Female|Yes|No|Asian|I AM NOT A VETERAN
+%>>>>>
+
+% edus   = \section{Education}
+% skills = \section{Skills}
+% exps   = \section{Experiences}
+
+\begin{document}
+\maketitle

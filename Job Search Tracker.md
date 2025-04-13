@@ -2,9 +2,9 @@
 
 | Company | Position | Date Applied | Status | Follow-up | Notes | APP |
 |---------|----------|--------------|--------|-----------|-------|-----|
-| Regulatory Connect | Scientist | April 10, 2025 | Applied | | Senior Associate Scientist position focused on metabolite identification and drug metabolism studies - matches your analytical chemistry and MS experience | LinkedIn |
+| Regulatory Connect | Scientist | April 10, 2025 | Applied | Denied | Senior Associate Scientist position focused on metabolite identification and drug metabolism studies - matches your analytical chemistry and MS experience | LinkedIn |
 | Evergreen Theragnostics | Quality Control Chemist | April 10, 2025 | Applied | | Verified position - your analytical chemistry background and lab experience align well | LinkedIn |
-| Accendero Software, Inc. | Computational Chemist | April 10, 2025 | Applied | | Your computational modeling experience and programming skills are relevant here | LinkedIn |
+| Accendero Software, Inc. | Computational Chemist | April 10, 2025 | Applied |Denied| Your computational modeling experience and programming skills are relevant here | LinkedIn |
 | Country Life | Laboratory Chemist | April 10, 2025 | Applied | | Verified position - your analytical chemistry skills and lab techniques are applicable | LinkedIn |
 | Monte Rosa Therapeutics | Scientist – Protein Biochemistry and Biophysics | April 9, 2025 | Applied | | Your X-ray crystallography and SPR experience align well with this role | LinkedIn |
 | Confidencial | Senior Chemist | April 9, 2025 | Applied | | Matches your analytical chemistry and spectroscopy background | LinkedIn |

@@ -3,7 +3,7 @@
 ## Technical Skills
 
 ### Experimental
-- **Protein Biochemistry**: Recombinant protein expression, purification, and mutagenesis
+- **Protein Biochemistry**: Recombinant protein expression, purification (chromatography: affinity, IEX, HIC, and SEC), mutagenesis, characterization (SDS-PAGE, Western Blot, Agarose gel electrophoresis).
 - **X-ray Crystallography**: Protein crystallization, diffraction data collection (up to 1.88 Å resolution), structure solving and refinement
 - **Spectroscopy**: UV-Vis, Fluorescence, Raman, FTIR, IR-VASE, NMR, TCSPC, XPS, ICP, AAS
 - **Microscopy**: SEM, TEM, AFM

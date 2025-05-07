@@ -2,10 +2,9 @@
 *North Carolina State University, Raleigh, NC*  
 *July 2023 - May 2024*
 
-    \item Decreased X-ray crystallograpy screening expense by >90\% with AlphaFold 3 metabolite docking prediction
-    \item  Isolated 99\% pure recombinant tryptophan dioxygenase (TDO) and indoleamine 2,3-dioxygenase (IDO) from \textit{E. coli} using affinity, IEX, and SEC chromatography for rigorous experiment quality control
-    \item Discovered 2 heme degradation intermediates in TDO through protein mass-spectrometry (UPLC-QqQ MS)
-    \item Achieved top 3\% performance measuring protein crystal structures upto TDO 1.88 Å / IDO 2.45 Å using 8 different metabolites under areobic and anaerobic conditions
-    \item Observed tryptophan activation in the previously uncharacterized ferric state TDO-Trp reaction mechanism through UV-Vis spectroscopy and stopped-flow techniques
+    \item  Improved 400\% strength in scratch test with synthesized novel topology polymers
+    \item Programmed LAMMPS / PCFF simulating nanoindentation to guide polymer surface modification
+    \item  Identified chloroform asymmetric bending mode in chloroform treated copolyester using IR-ATR and DFT computation, improved spectroscopic understanding of solvent induced crystallinity
+    \item Decreased 95\% expense by replacing nanoindentation with modified Martindale abrasion test for polymer plates
     
 - Explored potential interdisciplinary applications connecting polymer science with SPR techniques for quantifying enzymatic degradation of abraded microplastics
